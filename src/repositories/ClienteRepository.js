@@ -20,13 +20,17 @@ class ClienteRepository {
 
   async update(id, newData) {
     const cliente = await Cliente.findByPk(id);
-    if (!cliente) return null;
+    if (!cliente) 
+      return null;
+
     return await cliente.update(newData);
   }
 
   async delete(id) {
     const cliente = await Cliente.findByPk(id);
-    if (!cliente) return null;
+    if (!cliente) 
+      return null;
+    
     await cliente.destroy();
     return cliente;
   }
